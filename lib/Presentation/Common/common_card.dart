@@ -1,6 +1,9 @@
+import 'package:fashion_sale/Data/app_color.dart';
+import 'package:fashion_sale/Data/app_textstyle.dart';
+import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'common_text.dart'; // adjust path according to your project structure
+import 'common_text.dart';
 
 class ProductCard extends StatelessWidget {
   final String imagePath;
@@ -44,14 +47,14 @@ class ProductCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                         child: Image.asset(
                           imagePath,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                           height: 184.h,
                           width: 148.w,
                         ),
                       ),
                       Container(
-                        height: 30,
-                        width: 50,
+                        height: 30.h,
+                        width: 50.w,
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         decoration: BoxDecoration(
@@ -60,9 +63,9 @@ class ProductCard extends StatelessWidget {
                         ),
                         child: CommonText(
                           text: discount,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
+                          style: AppTextstyle.texttwo(
+                            context,
+                            color: AppColors.whiteText,
                           ),
                         ),
                       ),
@@ -75,34 +78,31 @@ class ProductCard extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 8),
+              8.Y,
               CommonText(
                 text: brand,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppTextstyle.texttwo(context, fontsize: 16.sp),
               ),
               CommonText(
                 text: productName,
-                style: const TextStyle(color: Colors.grey),
+                style: TextStyle(color: Colors.grey),
               ),
               Row(
                 children: [
                   CommonText(
-                    text: oldPrice,
-                    style: const TextStyle(
+                    text: "${oldPrice.toString()}\$",
+                    style: TextStyle(
                       color: Colors.grey,
                       decoration: TextDecoration.lineThrough,
                     ),
                   ),
-                  const SizedBox(width: 8),
+                  8.x,
                   CommonText(
-                    text: newPrice,
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                    text: "${newPrice.toString()}\$",
+                    style: AppTextstyle.texttwo(
+                      context,
+                      color: AppColors.blackIcon,
+                      fontsize: 16.sp,
                     ),
                   ),
                 ],

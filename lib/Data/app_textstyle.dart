@@ -27,7 +27,7 @@ class AppTextstyle {
     String? fontFamily,
   }) {
     return TextStyle(
-      fontSize: fontsize ?? 20.sp,
+      fontSize: fontsize ?? 15.sp,
       color: color ?? AppColors.filterBlack,
       fontFamily: fontFamily ?? 'Poppine',
       fontWeight: fontWeight ?? FontWeight.bold,
