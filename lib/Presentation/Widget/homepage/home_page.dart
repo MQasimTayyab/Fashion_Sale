@@ -37,64 +37,61 @@ class _HomePageState extends State<HomePage> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 300, left: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      CommonText(
-                        text: AppStrings.fashionsalee,
-                        style: AppTextstyle.textone(context),
-                      ),
-                      CommonButton(
-                          text: AppStrings.check,
-                          onPressed: () {
-                            Navigate.to(context, StreetCloth());
-                          }),
-                      25.h.Y,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CommonText(
+                      text: AppStrings.fashionsalee,
+                      style: AppTextstyle.textone(context),
+                    ),
+                    CommonButton(
+                        text: AppStrings.check,
+                        onPressed: () {
+                          Navigate.to(context, StreetCloth());
+                        }),
+                    25.h.Y,
 
-                      //new
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              CommonText(
-                                text: AppStrings.newest,
-                                style: AppTextstyle.texttwo(context),
-                              ),
-                              CommonText(
-                                text: AppStrings.viewall,
-                                style: AppTextstyle.texttwo(context),
-                              ),
-                            ],
-                          ),
-                          CommonText(
-                            text: AppStrings.youvenever,
-                            style: AppTextstyle.texttwo(context),
-                          ),
-                          20.Y,
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                              children: dummyproducts.map((product) {
-                                return ProductCard(
-                                  imagePath: product.imagePath.toString(),
-                                  discount: product.discount.toString(),
-                                  brand: product.brand.toString(),
-                                  productName: product.productName.toString(),
-                                  oldPrice: product.oldPrice.toString(),
-                                  newPrice: product.newPrice.toString(),
-                                );
-                              }).toList(),
+                    //new
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            CommonText(
+                              text: AppStrings.newest,
+                              style: AppTextstyle.texttwo(context),
                             ),
-                          )
-                        ],
-                      )
-                    ],
-                  ),
-                )
+                            CommonText(
+                              text: AppStrings.viewall,
+                              style: AppTextstyle.texttwo(context),
+                            ),
+                          ],
+                        ),
+                        CommonText(
+                          text: AppStrings.youvenever,
+                          style: AppTextstyle.texttwo(context),
+                        ),
+                        20.Y,
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                            children: dummyproducts.map((product) {
+                              return ProductCard(
+                                imagePath: product.imagePath.toString(),
+                                discount: product.discount.toString(),
+                                brand: product.brand.toString(),
+                                productName: product.productName.toString(),
+                                oldPrice: product.oldPrice.toString(),
+                                newPrice: product.newPrice.toString(),
+                              );
+                            }).toList(),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ).paddingOnly(top: 300, left: 20)
               ],
             )
           ],

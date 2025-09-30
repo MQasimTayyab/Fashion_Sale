@@ -37,43 +37,38 @@ class ProductCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
             ),
             elevation: 3,
-            child: Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Column(
-                children: [
-                  Stack(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: Image.asset(
-                          imagePath,
-                          fit: BoxFit.contain,
-                          height: 184.h,
-                          width: 148.w,
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.asset(
+                        imagePath,
+                        fit: BoxFit.contain,
+                        height: 184.h,
+                        width: 148.w,
+                      ),
+                    ),
+                    Container(
+                      height: 30.h,
+                      width: 50.w,
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: CommonText(
+                        text: discount,
+                        style: AppTextstyle.texttwo(
+                          context,
+                          color: AppColors.whiteText,
                         ),
                       ),
-                      Container(
-                        height: 30.h,
-                        width: 50.w,
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        child: CommonText(
-                          text: discount,
-                          style: AppTextstyle.texttwo(
-                            context,
-                            color: AppColors.whiteText,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+                    ).paddingSymmetric(horizontal: 8, vertical: 4)
+                  ],
+                ),
+              ],
+            ).paddingAll(12),
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
