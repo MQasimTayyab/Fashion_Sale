@@ -7,9 +7,12 @@ class AppStrings {
   static String filters = "Filters";
   static String brand = "Brand";
   static String mainpage = "Main page";
+  static String supper = "Super summer sale";
   static String main2 = "Main 2";
   static String main3 = "Main 3";
   static String catalog1 = "Catalog 1";
+  static String kid = "Kids";
+  static String upto = "Up to 50% off";
 
   // Product Categories
   static String tshirts = "T-shirts";
@@ -78,6 +81,7 @@ class AppStrings {
   static String sale = "Sale";
   static String newcollection = "New collection";
   static String summersale = "Summer sale";
+  static String summersalee = "Summer\nsale";
   static String menshoodies = "Men's hoodies";
   static String black = "Black";
   static String nw = "New";

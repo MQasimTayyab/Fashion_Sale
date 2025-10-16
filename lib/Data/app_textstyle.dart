@@ -14,7 +14,7 @@ class AppTextstyle {
     return TextStyle(
       fontSize: fontsize ?? 40.sp,
       color: color ?? AppColors.whiteIcon,
-      fontFamily: fontFamily ?? 'Poppine',
+      fontFamily: fontFamily ?? 'Metropolis',
       fontWeight: fontWeight ?? FontWeight.bold,
     );
   }
@@ -29,7 +29,7 @@ class AppTextstyle {
     return TextStyle(
       fontSize: fontsize ?? 15.sp,
       color: color ?? AppColors.filterBlack,
-      fontFamily: fontFamily ?? 'Poppine',
+      fontFamily: fontFamily ?? 'Metropolis',
       fontWeight: fontWeight ?? FontWeight.bold,
     );
   }
@@ -44,7 +44,7 @@ class AppTextstyle {
     return TextStyle(
       fontSize: fontsize ?? 12.sp,
       color: color ?? AppColors.filterBlack,
-      fontFamily: fontFamily ?? 'Poppine',
+      fontFamily: fontFamily ?? 'Metropolis',
       fontWeight: fontWeight ?? FontWeight.w100,
     );
   }

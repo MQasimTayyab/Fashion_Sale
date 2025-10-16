@@ -1,0 +1,48 @@
+import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
+import 'package:fashion_sale/Data/app_strings.dart';
+import 'package:fashion_sale/Data/app_textstyle.dart';
+import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Common/common_btn.dart';
+import 'package:fashion_sale/Presentation/Common/common_text.dart';
+import 'package:fashion_sale/Presentation/Widget/street_cloth/street_cloth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+Stack banner(BuildContext context) {
+  return Stack(
+    children: [
+      Container(
+        width: double.infinity,
+        height: 0.7.sh,
+        child: Image.asset(
+          'assets/images/Big_Banner.png',
+          fit: BoxFit.cover,
+        ),
+      ),
+      Positioned(
+        left: 20.w,
+        bottom: 40.h,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CommonText(
+              text: AppStrings.fashionsalee,
+              style: AppTextstyle.textone(
+                context,
+                color: Colors.white,
+                fontsize: 24.sp,
+              ),
+            ),
+            10.h.Y,
+            CommonButton(
+              text: AppStrings.check,
+              onPressed: () {
+                Navigate.to(context, StreetCloth());
+              },
+            ),
+          ],
+        ),
+      ),
+    ],
+  );
+}

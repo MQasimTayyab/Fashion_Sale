@@ -1,4 +1,5 @@
-import 'package:fashion_sale/splash_screen.dart';
+import 'package:fashion_sale/Presentation/Widget/splash_screen/splash_screen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,3 +22,5 @@ class MyApp extends StatelessWidget {
             ));
   }
 }
+
+//

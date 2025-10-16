@@ -1,0 +1,51 @@
+import 'package:fashion_sale/Data/app_strings.dart';
+import 'package:fashion_sale/Data/app_textstyle.dart';
+import 'package:fashion_sale/Presentation/Common/common_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+Row threewidgets(BuildContext context) {
+  return Row(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Expanded(
+        flex: 1,
+        child: Column(
+          children: [
+            Container(
+              height: 171.h,
+              child: Center(
+                child: CommonText(
+                  text: AppStrings.summersalee,
+                  style: AppTextstyle.textone(context,
+                      fontsize: 24.sp,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.pink),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 0.25.sh,
+              width: double.infinity,
+              child: Image.asset(
+                "assets/images/image 2.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
+        ),
+      ),
+      Expanded(
+        flex: 1,
+        child: SizedBox(
+          height: 0.46.sh,
+          width: double.infinity,
+          child: Image.asset(
+            "assets/images/image.png",
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
+    ],
+  );
+}

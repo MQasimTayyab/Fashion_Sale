@@ -33,19 +33,21 @@ class CategoryCard extends StatelessWidget {
                   child: CommonText(
                     text: title,
                     style: AppTextstyle.textone(context,
-                        color: AppColors.blackIcon, fontsize: 22.sp),
-                  ),
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.blackIcon,
+                        fontsize: 18.sp),
+                  ).padOnly(left: 22.h),
                 ),
               ],
             ),
             Image.asset(
               imagePath,
-              width: 150.w,
+              width: 170.w,
               // height: 80.h,
               fit: BoxFit.contain,
             ),
           ],
-        ).paddingSymmetric(horizontal: 16),
+        ).padSymmetric(horizontal: 16),
       ),
     );
   }

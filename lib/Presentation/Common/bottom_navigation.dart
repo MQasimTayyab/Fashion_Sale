@@ -1,4 +1,8 @@
+import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
 import 'package:fashion_sale/Presentation/Common/bottomnav_controller.dart';
+import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
+import 'package:fashion_sale/Presentation/Widget/homepage/home_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,13 +19,21 @@ class CommonBottomNavBar extends StatelessWidget {
           selectedItemColor: Colors.pink,
           unselectedItemColor: Colors.grey,
           onTap: controller.changeIndex,
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
+              icon: InkWell(
+                  onTap: () {
+                    Navigate.to(context, HomePage());
+                  },
+                  child: Icon(Icons.home)),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart_outlined),
+              icon: InkWell(
+                  onTap: () {
+                    Navigate.to(context, Categories());
+                  },
+                  child: Icon(Icons.shopping_cart_outlined)),
               label: "Shop",
             ),
             BottomNavigationBarItem(

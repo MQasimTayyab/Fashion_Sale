@@ -33,71 +33,88 @@ class ProductCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Card(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            elevation: 3,
-            child: Column(
-              children: [
-                Stack(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: SizedBox(
+                width: 110.w,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(
-                        imagePath,
-                        fit: BoxFit.contain,
-                        height: 184.h,
-                        width: 148.w,
-                      ),
-                    ),
-                    Container(
-                      height: 30.h,
-                      width: 50.w,
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: CommonText(
-                        text: discount,
-                        style: AppTextstyle.texttwo(
-                          context,
-                          color: AppColors.whiteText,
+                    Stack(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(
+                            imagePath,
+                            fit: BoxFit.contain,
+                            height: 150.h,
+                            width: double.infinity,
+                          ),
                         ),
-                      ),
-                    ).paddingSymmetric(horizontal: 8, vertical: 4)
+                        Container(
+                          height: 30.h,
+                          width: 35.w,
+                          decoration: BoxDecoration(
+                            color: AppColors.filterBlack,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: Center(
+                            child: CommonText(
+                              text: discount,
+                              style: AppTextstyle.texttwo(
+                                context,
+                                fontWeight: FontWeight.normal,
+                                color: AppColors.whiteText,
+                                fontsize: 10.sp,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ],
                 ),
-              ],
-            ).paddingAll(12),
-          ),
+              ).padAll(10.w)),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              8.Y,
+              //  Brand
               CommonText(
                 text: brand,
-                style: AppTextstyle.texttwo(context, fontsize: 16.sp),
+                style: AppTextstyle.texttwo(context,
+                    fontsize: 10.sp,
+                    fontWeight: FontWeight.normal,
+                    color: AppColors.filterGrey),
               ),
+
+              //  Product Name
               CommonText(
-                text: productName,
-                style: TextStyle(color: Colors.grey),
-              ),
+                  text: productName,
+                  style: AppTextstyle.textone(context,
+                      fontsize: 14.sp, color: AppColors.filterBlack)),
+
+              6.h.Y,
+
+              //  Price Row
               Row(
                 children: [
                   CommonText(
-                    text: "${oldPrice.toString()}\$",
+                    text: "$oldPrice\$",
                     style: TextStyle(
                       color: Colors.grey,
+                      fontSize: 8.sp,
                       decoration: TextDecoration.lineThrough,
                     ),
                   ),
-                  8.x,
+                  8.w.X,
                   CommonText(
-                    text: "${newPrice.toString()}\$",
+                    text: "$newPrice\$",
                     style: AppTextstyle.texttwo(
                       context,
-                      color: AppColors.blackIcon,
-                      fontsize: 16.sp,
+                      color: AppColors.filterRed,
+                      fontsize: 8.sp,
                     ),
                   ),
                 ],

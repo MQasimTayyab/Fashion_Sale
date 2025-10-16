@@ -1,12 +1,16 @@
+import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
 import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
-import 'package:fashion_sale/Data/extenstion.dart';
+
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
-import 'package:fashion_sale/Presentation/Common/categories_card.dart';
+
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
+import 'package:fashion_sale/Presentation/Widget/categories/components/women_tab.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+// summer sale /women / men/ kids
 
 class Categories extends StatefulWidget {
   const Categories({super.key});
@@ -22,21 +26,45 @@ class _CategoriesState extends State<Categories> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.arrow_back_ios,
+          leading: InkWell(
+            onTap: () {
+              Navigate.pop(context);
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+            ),
           ),
-          title: CommonText(
-            text: AppStrings.categories,
-            style: AppTextstyle.texttwo(context),
+          title: Center(
+            child: CommonText(
+              text: AppStrings.categories,
+              style: AppTextstyle.texttwo(context,
+                  fontsize: 18.sp, fontWeight: FontWeight.w400),
+            ),
           ),
           actions: [Icon(Icons.search)],
           bottom: TabBar(
+            dividerHeight: 0,
             indicatorColor: AppColors.primaryButton,
             indicatorSize: TabBarIndicatorSize.tab,
             tabs: [
-              Tab(text: AppStrings.women),
-              Tab(text: AppStrings.men),
-              Tab(text: AppStrings.women),
+              Tab(
+                  child: CommonText(
+                text: AppStrings.women,
+                style: AppTextstyle.texttwo(context,
+                    fontWeight: FontWeight.w400, fontsize: 16.sp),
+              )),
+              Tab(
+                  child: CommonText(
+                text: AppStrings.men,
+                style: AppTextstyle.texttwo(context,
+                    fontWeight: FontWeight.w400, fontsize: 16.sp),
+              )),
+              Tab(
+                  child: CommonText(
+                text: AppStrings.kid,
+                style: AppTextstyle.texttwo(context,
+                    fontWeight: FontWeight.w400, fontsize: 16.sp),
+              )),
             ],
           ),
         ),
@@ -44,34 +72,7 @@ class _CategoriesState extends State<Categories> {
           children: [
             //tab1
 
-            Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: AppColors.primaryRed,
-                  ),
-                  width: 343.w,
-                  height: 100.h,
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        CommonText(
-                          text: AppStrings.summersale,
-                        ),
-                        CommonText(
-                          text: AppStrings.sale,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                10.Y,
-                CategoryCard(
-                    title: AppStrings.neww, imagePath: 'assets/images/main.png')
-              ],
-            ),
+            womentab(context),
             //tab2
             Column(
               children: [
