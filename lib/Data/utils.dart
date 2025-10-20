@@ -1,3 +1,4 @@
+import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Domain/Model/categories.dart';
 
 class Utils {
@@ -6,18 +7,22 @@ class Utils {
     {
       "title": "New",
       "imagePath": "assets/images/image 4.1.png",
+      "color": AppColors.activeBorder
     },
     {
       "title": "Clothes",
       "imagePath": "assets/images/image 5.png",
+      "color": AppColors.filterBlack
     },
     {
       "title": "Shoes",
       "imagePath": "assets/images/image 7.png",
+      "color": AppColors.filterGrey
     },
     {
       "title": "Accesories",
       "imagePath": "assets/images/image 8.png",
+      "color": AppColors.whiteIcon
     },
   ];
   //
@@ -31,7 +36,8 @@ class Utils {
       "brand": "Dorothy perkins",
       "productName": "Evening Dress",
       "oldPrice": "15",
-      "newPrice": "12"
+      "newPrice": "12",
+      "color": AppColors.primaryRed
     },
     {
       "imagePath": "assets/images/744caf4f8cbe22e0d501d66b730b03c24f793383.png",
@@ -39,7 +45,8 @@ class Utils {
       "brand": "Sitlly",
       "productName": "Sport Dress",
       "oldPrice": "22",
-      "newPrice": "19"
+      "newPrice": "19",
+      "color": AppColors.filterGrey
     },
 
     //second time
@@ -51,7 +58,8 @@ class Utils {
       "brand": "Dorothy perkins",
       "productName": "Evening Dress",
       "oldPrice": "15",
-      "newPrice": "12"
+      "newPrice": "12",
+      "color": AppColors.primaryRed
     },
     {
       "imagePath": "assets/images/744caf4f8cbe22e0d501d66b730b03c24f793383.png",
@@ -59,7 +67,8 @@ class Utils {
       "brand": "Dorothy",
       "productName": "Sport Dress",
       "oldPrice": "12",
-      "newPrice": "10"
+      "newPrice": "10",
+      "color": AppColors.filterGrey
     },
   ];
 
@@ -71,28 +80,32 @@ class Utils {
       "brand": "Pullover",
       "rating": 3,
       "price": 51.0,
-      "imagePath": "assets/images/photo.png"
+      "imagePath": "assets/images/photo.png",
+      "color": AppColors.filterNavy
     },
     {
       "productName": "Dorothy Perkins",
       "brand": "Blouse",
       "rating": 4,
       "price": 34.0,
-      "imagePath": "assets/images/image w3.png"
+      "imagePath": "assets/images/image w3.png",
+      "color": AppColors.filterBrown
     },
     {
       "productName": "LOST Ink",
       "brand": "T-shirt",
       "rating": 10,
       "price": 12.0,
-      "imagePath": "assets/images/image w1.png"
+      "imagePath": "assets/images/image w1.png",
+      "color": AppColors.whiteIcon
     },
     {
       "productName": "Topshop",
       "brand": "Shirt",
       "rating": 3,
       "price": 51.0,
-      "imagePath": "assets/images/image w2.png"
+      "imagePath": "assets/images/image w2.png",
+      "color": AppColors.filterBlack
     },
   ];
 
@@ -106,7 +119,8 @@ class Utils {
       "oldPrice": 21.0,
       "newPrice": 9.0,
       "discount": "-20%",
-      "imagePath": "assets/images/photofo.png"
+      "imagePath": "assets/images/photofo.png",
+      "color": AppColors.whiteIcon
     },
     {
       "productName": "Blouse",
@@ -115,7 +129,8 @@ class Utils {
       "oldPrice": 21.0,
       "newPrice": 14.0,
       "discount": "-20%",
-      "imagePath": "assets/images/phototre.png"
+      "imagePath": "assets/images/phototre.png",
+      "color": AppColors.whiteIcon
     },
     {
       "productName": "Shirt",
@@ -124,7 +139,8 @@ class Utils {
       "oldPrice": 17.0,
       "newPrice": 14.0,
       "discount": "-20%",
-      "imagePath": "assets/images/photofo.png"
+      "imagePath": "assets/images/photofo.png",
+      "color": AppColors.whiteIcon
     },
     {
       "productName": "Light Blouse",
@@ -133,7 +149,8 @@ class Utils {
       "oldPrice": 21.0,
       "newPrice": 14.0,
       "discount": "-20%",
-      "imagePath": "assets/images/phototre.png"
+      "imagePath": "assets/images/phototre.png",
+      "color": AppColors.whiteIcon
     },
   ];
 

@@ -5,13 +5,13 @@
 
 // class CategoriesItemController extends GetxController {
  
-//   // 🔹 Navigate to selected category
+//   //  Navigate to selected category
 //   void navigateToCategory(BuildContext context, int index) {
 //     final category = categories[index];
 //     final screen = category["screen"];
 
 //     if (screen != null && screen is Widget) {
-//       Get.to(() => screen); // ✅ GetX navigation
+//       Get.to(() => screen); // GetX navigation
 //     } else {
 //       Get.snackbar("Error", "No screen defined for ${category['title']}");
 //     }

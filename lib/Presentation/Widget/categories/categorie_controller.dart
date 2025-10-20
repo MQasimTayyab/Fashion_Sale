@@ -14,7 +14,7 @@
 //   void fetchCategories() async {
 //     try {
 //       isLoading(true);
-//       await Future.delayed(const Duration(seconds: 2)); // simulate API delay
+//       await Future.delayed(const Duration(seconds: 2));
 
 //       error(""); // clear error
 //     } catch (e) {
