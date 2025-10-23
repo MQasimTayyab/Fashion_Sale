@@ -3,6 +3,7 @@ import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Common/common_circleavtar.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/range_price/filter_product.dart';
 import 'package:fashion_sale/Presentation/Widget/range_price/range_controller.dart';
@@ -35,7 +36,6 @@ class RangeSliderScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // price label
           CommonText(
             text: AppStrings.pricerange,
             style: AppTextstyle.texttwo(
@@ -45,23 +45,21 @@ class RangeSliderScreen extends StatelessWidget {
             ),
           ),
           20.Y,
-
-          // Price range value
           Obx(() => Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    "\$${controller.currentRangeValues.value.start.round()}",
+                  CommonText(
+                    text:
+                        "\$${controller.currentRangeValues.value.start.round()}",
                     style: AppTextstyle.texttwo(context),
                   ),
-                  Text(
-                    "\$${controller.currentRangeValues.value.end.round()}",
+                  CommonText(
+                    text:
+                        "\$${controller.currentRangeValues.value.end.round()}",
                     style: AppTextstyle.texttwo(context),
                   ),
                 ],
               )),
-
-          // Range slider
           Obx(
             () => RangeSlider(
               activeColor: AppColors.primaryRed,
@@ -77,8 +75,6 @@ class RangeSliderScreen extends StatelessWidget {
             ),
           ),
           20.Y,
-
-          //colors filter
           CommonText(
             text: AppStrings.colors,
             style: AppTextstyle.texttwo(
@@ -88,47 +84,47 @@ class RangeSliderScreen extends StatelessWidget {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CircleAvatar(
-                radius: 20,
-                foregroundColor: AppColors.warning,
-                backgroundColor: AppColors.blackIcon,
+              CommonCircleAvatar(
+                fillColor: AppColors.filterBlack,
+                borderColor: AppColors.lightRed,
               ),
-              5.X,
-              CircleAvatar(
-                backgroundColor: AppColors.lightRed,
+              CommonCircleAvatar(
+                fillColor: AppColors.whiteIcon,
+                borderColor: AppColors.lightRed,
               ),
-              // ColorFiltered(
-              //   colorFilter:
-              //       ColorFilter.mode(Colors.pinkAccent, BlendMode.color),
-              //   child: CommonText(
-              //     text: AppStrings.accessories,
-              //     style: AppTextstyle.textone(context),
-              //   ),
-              // ),
-              5.X,
-              // Container(
-              //   width: 50,
-              //   height: 50,
-              //   decoration: BoxDecoration(
-              //     color: Colors.red,
-              //     shape: BoxShape.circle,
-              //     border: Border.all(
-              //       color: Colors.green,
-              //       width: 2,
-              //     ),
-              //   ),
-              // )
+              CommonCircleAvatar(
+                fillColor: AppColors.lightRed,
+                borderColor: AppColors.lightRed,
+              ),
+              CommonCircleAvatar(
+                fillColor: AppColors.filterBrown,
+                borderColor: Colors.red,
+              ),
+              CommonCircleAvatar(
+                fillColor: AppColors.filterGrey,
+                borderColor: Colors.red,
+              ),
+              CommonCircleAvatar(
+                fillColor: AppColors.filterNavy,
+                borderColor: Colors.red,
+              ),
             ],
           ),
           15.Y,
-          //
-
-          // Buttons row
+          CommonText(
+            text: AppStrings.sizes,
+            style: AppTextstyle.texttwo(
+              context,
+              fontsize: 16.sp,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          15.Y,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              // Discard Button
               Expanded(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -138,9 +134,7 @@ class RangeSliderScreen extends StatelessWidget {
                     ),
                     padding: EdgeInsets.symmetric(vertical: 12.h),
                   ),
-                  onPressed: () {
-                    controller.resetRange();
-                  },
+                  onPressed: controller.resetRange,
                   child: CommonText(
                     text: "Discard",
                     style: AppTextstyle.texttwo(
@@ -153,8 +147,6 @@ class RangeSliderScreen extends StatelessWidget {
                 ),
               ),
               15.X,
-
-              // Apply Button
               Expanded(
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -166,7 +158,6 @@ class RangeSliderScreen extends StatelessWidget {
                   ),
                   onPressed: () {
                     controller.applyFilter();
-
                     Navigate.to(context, FilteredProductScreen());
                   },
                   child: CommonText(
@@ -187,99 +178,3 @@ class RangeSliderScreen extends StatelessWidget {
     );
   }
 }
-
-// import 'package:fashion_sale/Data/app_color.dart';
-// import 'package:fashion_sale/Data/app_strings.dart';
-// import 'package:fashion_sale/Data/app_textstyle.dart';
-// import 'package:fashion_sale/Data/extenstion.dart';
-// import 'package:fashion_sale/Presentation/Common/common_text.dart';
-// import 'package:fashion_sale/Presentation/Widget/range_price/range_controller.dart';
-// import 'package:flutter/material.dart';
-
-// import 'package:flutter_screenutil/flutter_screenutil.dart';
-// import 'package:get/get.dart';
-
-// class RangeSliderScreen extends StatelessWidget {
-//   const RangeSliderScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     final controller = Get.put(RangeController());
-
-//     return Scaffold(
-//       appBar: AppBar(
-//           title: Center(
-//               child: CommonText(
-//         text: AppStrings.filters,
-//         style: AppTextstyle.texttwo(context,
-//             fontsize: 18.sp, fontWeight: FontWeight.w400),
-//       ))),
-//       body:
-//           //parent column price/color or more....
-//           Column(
-//         crossAxisAlignment: CrossAxisAlignment.start,
-//         children: [
-//           //price range slider
-//           CommonText(
-//             text: AppStrings.pricerange,
-//             style: AppTextstyle.texttwo(context,
-//                 fontsize: 16.sp, fontWeight: FontWeight.w400),
-//           ),
-//           30.Y,
-//           Obx(() => RangeSlider(
-//                 activeColor: AppColors.primaryRed,
-//                 values: controller.currentRangeValues.value,
-//                 max: 200,
-//                 divisions: 10,
-//                 labels: RangeLabels(
-//                   controller.currentRangeValues.value.start.round().toString(),
-//                   controller.currentRangeValues.value.end.round().toString(),
-//                 ),
-//                 onChanged: controller.updateRange,
-//               )),
-//           10.Y,
-
-//           //colors section
-//           CommonText(
-//             text: AppStrings.colors,
-//             style: AppTextstyle.texttwo(context, fontWeight: FontWeight.w400),
-//           ),
-//           10.Y,
-
-// Row(
-//   children: [
-//     CircleAvatar(
-//       radius: 20,
-//       foregroundColor: Colors.amber,
-//       backgroundColor: AppColors.blackIcon,
-//     ),
-//     5.X,
-//     CircleAvatar(
-//       backgroundColor: AppColors.backgroundColor,
-//     ),
-//     5.X,
-//     Container(
-//       width: 50,
-//       height: 50,
-//       decoration: BoxDecoration(
-//         color: Colors.red,
-//         shape: BoxShape.circle,
-//         border: Border.all(
-//           color: Colors.green,
-//           width: 2,
-//         ),
-//       ),
-//     )
-//   ],
-// ),
-//           //sizes
-//           10.Y,
-//           CommonText(
-//             text: AppStrings.sizes,
-//             style: AppTextstyle.texttwo(context, fontWeight: FontWeight.w400),
-//           )
-//         ],
-//       ).padAll(20),
-//     );
-//   }
-// }

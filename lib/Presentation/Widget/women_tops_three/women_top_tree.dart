@@ -30,15 +30,15 @@ class _WomenTopsState extends State<WomenTopTree> {
         appBar: AppBar(
           leading: InkWell(
             onTap: () => Navigate.pop(context),
-            child: Icon(Icons.arrow_back_ios),
+            child: const Icon(Icons.arrow_back_ios),
           ),
           title: Center(
               child: InkWell(
                   onTap: () {
-                    Navigate.to(context, RangeSliderScreen());
+                    Navigate.to(context, const RangeSliderScreen());
                   },
                   child: CommonText(text: AppStrings.womenstops))),
-          actions: [Icon(Icons.search)],
+          actions: const [Icon(Icons.search)],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -52,7 +52,7 @@ class _WomenTopsState extends State<WomenTopTree> {
               unselectedLabelColor: AppColors.filterBlack,
               indicatorSize: TabBarIndicatorSize.tab,
               dividerHeight: 0,
-              tabs: [
+              tabs: const [
                 Tab(text: "T-shirt"),
                 Tab(text: "Blouse"),
                 Tab(text: "Pullover"),
@@ -64,24 +64,24 @@ class _WomenTopsState extends State<WomenTopTree> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(children: [
-                  Icon(Icons.filter_list),
+                  const Icon(Icons.filter_list),
                   10.X,
                   CommonText(text: AppStrings.filters),
                 ]),
                 Row(children: [
-                  Icon(Icons.double_arrow),
+                  const Icon(Icons.double_arrow),
                   10.X,
                   CommonText(text: AppStrings.pricehighesttolow),
                 ]),
-                Icon(Icons.add),
+                const Icon(Icons.add),
               ],
             ).padSymmetric(horizontal: 16, vertical: 8),
             Expanded(
               child: TabBarView(
                 children: [
                   buildProductList(),
-                  Center(child: CommonText(text: "Pullover List Here")),
-                  Center(child: CommonText(text: "Shirt List Here")),
+                  const Center(child: CommonText(text: "Pullover List Here")),
+                  const Center(child: CommonText(text: "Shirt List Here")),
                 ],
               ),
             ),
@@ -93,8 +93,8 @@ class _WomenTopsState extends State<WomenTopTree> {
 
   Widget buildProductList() {
     return GridView.builder(
-      padding: EdgeInsets.all(12),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      padding: const EdgeInsets.all(12),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 12,
         crossAxisSpacing: 12,
@@ -115,7 +115,7 @@ class _WomenTopsState extends State<WomenTopTree> {
                   Stack(
                     children: [
                       ClipRRect(
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(12),
                           topRight: Radius.circular(12),
                         ),

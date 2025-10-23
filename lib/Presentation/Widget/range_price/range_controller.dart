@@ -4,35 +4,47 @@ import 'package:flutter/material.dart';
 
 class RangeController extends GetxController {
   // current range slider
-  Rx<RangeValues> currentRangeValues = RangeValues(0, 200).obs;
+  Rx<RangeValues> currentRangeValues = const RangeValues(0, 200).obs;
 
   // filter products
   RxList<Map<String, dynamic>> filteredProducts = <Map<String, dynamic>>[].obs;
 
-  // all product
+  // selected colors
+  RxList<Color> selectedColors = <Color>[].obs;
+
+  // all products
   late final List<Map<String, dynamic>> allProducts;
 
   @override
   void onInit() {
     super.onInit();
 
-    // combine utils all in one
+    // combine utils data
     allProducts = [
       ...Utils.dummyWomenDiscountJson,
       ...Utils.dummywomenJson,
     ];
 
-    // show all product init
     filteredProducts.assignAll(allProducts);
   }
 
-  // update slider range and apply filter
+  // update range slider
   void updateRange(RangeValues values) {
     currentRangeValues.value = values;
     filterProducts();
   }
 
-  //apply price based filter
+  //  color selection
+  void toggleColor(Color color) {
+    if (selectedColors.contains(color)) {
+      selectedColors.remove(color);
+    } else {
+      selectedColors.add(color);
+    }
+    filterProducts(); // update color select
+  }
+
+  // main filter function
   void filterProducts() {
     final start = currentRangeValues.value.start;
     final end = currentRangeValues.value.end;
@@ -45,18 +57,26 @@ class RangeController extends GetxController {
                   "0",
             ) ??
             0;
-        return price >= start && price <= end;
+
+        final productColor = product["color"];
+
+        final matchesPrice = price >= start && price <= end;
+        final matchesColor =
+            selectedColors.isEmpty || selectedColors.contains(productColor);
+
+        return matchesPrice && matchesColor;
       }),
     );
   }
 
-  //reseat slider and show all
+  // reset all filters
   void resetRange() {
-    currentRangeValues.value = RangeValues(0, 200);
+    currentRangeValues.value = const RangeValues(0, 200);
+    selectedColors.clear();
     filteredProducts.assignAll(allProducts);
   }
 
-  //apply filter
+  // apply filter ...
   void applyFilter() {
     filterProducts();
   }
