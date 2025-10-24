@@ -12,6 +12,7 @@ class ProductController extends GetxController {
     super.onInit();
     loadProducts();
   }
+  //
 
   void loadProducts() async {
     try {

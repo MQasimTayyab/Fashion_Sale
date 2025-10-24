@@ -3,6 +3,7 @@ import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Common/common_btn.dart';
 import 'package:fashion_sale/Presentation/Common/common_circleavtar.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/range_price/filter_product.dart';
@@ -83,7 +84,7 @@ class RangeSliderScreen extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               CommonCircleAvatar(
@@ -126,49 +127,21 @@ class RangeSliderScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Expanded(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey.shade300,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 12.h),
-                  ),
+                child: CommonButton(
+                  text: AppStrings.discard,
+                  textColor: AppColors.filterBlack,
+                  color: AppColors.greyBackground,
                   onPressed: controller.resetRange,
-                  child: CommonText(
-                    text: "Discard",
-                    style: AppTextstyle.texttwo(
-                      context,
-                      fontsize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
-                  ),
                 ),
               ),
               15.X,
               Expanded(
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.primaryRed,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.r),
-                    ),
-                    padding: EdgeInsets.symmetric(vertical: 12.h),
-                  ),
+                child: CommonButton(
+                  text: AppStrings.apply,
                   onPressed: () {
                     controller.applyFilter();
                     Navigate.to(context, FilteredProductScreen());
                   },
-                  child: CommonText(
-                    text: "Apply",
-                    style: AppTextstyle.texttwo(
-                      context,
-                      fontsize: 14.sp,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
               ),
             ],

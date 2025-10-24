@@ -35,7 +35,7 @@ class CommonButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: color ?? AppColors.primaryButton,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 8),
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
         ),
       ),
       child: Text(

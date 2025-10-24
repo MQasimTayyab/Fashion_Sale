@@ -1,4 +1,5 @@
 import 'package:fashion_sale/Data/extenstion.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -24,7 +25,6 @@ class AllProductsPage extends StatelessWidget {
         }
 
         return ListView.separated(
-          padding: EdgeInsets.all(16),
           itemCount: controller.products.length,
           separatorBuilder: (_, __) => 12.h.Y,
           itemBuilder: (context, index) {
@@ -38,7 +38,7 @@ class AllProductsPage extends StatelessWidget {
               newPrice: product.newPrice.toString(),
             );
           },
-        );
+        ).paddingAll(16);
       }),
     );
   }

@@ -1,6 +1,9 @@
+import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
 import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Widget/homepage/all_product.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'common_text.dart';
@@ -28,7 +31,9 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onTap,
+      onTap: () {
+        Navigate.to(context, AllProductsPage());
+      },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
