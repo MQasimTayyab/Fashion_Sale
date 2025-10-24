@@ -20,6 +20,7 @@ class CommonBottomNavBar extends StatelessWidget {
           unselectedItemColor: Colors.grey,
           onTap: controller.changeIndex,
           items: [
+            //item
             BottomNavigationBarItem(
               icon: InkWell(
                   onTap: () {

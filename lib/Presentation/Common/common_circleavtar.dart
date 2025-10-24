@@ -23,6 +23,7 @@ class CommonCircleAvatar extends StatelessWidget {
     return Obx(() {
       bool isSelected = rangeController.selectedColors.contains(fillColor);
 
+//gesturedectector
       return GestureDetector(
         onTap: () => rangeController.toggleColor(fillColor),
         child: AnimatedContainer(

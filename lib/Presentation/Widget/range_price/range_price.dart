@@ -12,6 +12,7 @@ import 'package:fashion_sale/Presentation/Widget/range_price/range_controller.da
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+//range slider
 
 class RangeSliderScreen extends StatelessWidget {
   const RangeSliderScreen({super.key});

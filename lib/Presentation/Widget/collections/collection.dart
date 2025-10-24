@@ -1,3 +1,4 @@
+import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
@@ -25,9 +26,10 @@ class Collection extends StatelessWidget {
           }
           if (controller.error.isNotEmpty) {
             return Center(
-              child: Text(
-                controller.error.value,
-                style: const TextStyle(color: Colors.red, fontSize: 16),
+              child: CommonText(
+                text: controller.error.value,
+                style: AppTextstyle.texttwo(context,
+                    color: AppColors.primaryRed, fontsize: 16.sp),
               ),
             );
           }

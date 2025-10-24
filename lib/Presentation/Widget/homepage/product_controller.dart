@@ -17,6 +17,7 @@ class ProductController extends GetxController {
   void loadProducts() async {
     try {
       isLoading(true);
+
       error("");
 
       await Future.delayed(Duration(seconds: 2));
