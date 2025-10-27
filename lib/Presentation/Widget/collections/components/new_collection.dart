@@ -4,6 +4,7 @@ import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,12 +22,14 @@ Stack newcollection(BuildContext context) {
       Center(
           child: TextButton(
         onPressed: () {
-          Navigate.to(context, Categories());
+          Navigate.to(context, HomePage());
         },
         child: CommonText(
-          text: AppStrings.newcollection,
-          style: AppTextstyle.textone(context,
-              fontsize: 34.sp, fontWeight: FontWeight.w500),
+          text: AppStrings.fashionsale,
+          style: AppTextstyle.textone(
+            context,
+            fontsize: 34.sp,
+          ),
         ),
       ).padOnly(top: 300, left: 50)),
     ],

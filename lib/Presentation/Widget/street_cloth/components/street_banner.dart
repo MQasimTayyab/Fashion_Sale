@@ -1,8 +1,9 @@
 import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
+import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-import 'package:fashion_sale/Presentation/Widget/collections/collection.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,17 +22,12 @@ Stack streetbanner(BuildContext context) {
       Positioned(
         bottom: 16.h,
         left: 16.w,
-        child: TextButton(
-          onPressed: () {
-            Navigate.to(context, Collection());
-          },
-          child: CommonText(
-            text: AppStrings.streetcloth,
-            style: AppTextstyle.textone(
-              context,
-              color: Colors.white,
-              fontsize: 22.sp,
-            ),
+        child: CommonText(
+          text: AppStrings.streetcloth,
+          style: AppTextstyle.textone(
+            context,
+            color: Colors.white,
+            fontsize: 22.sp,
           ),
         ),
       ),
@@ -43,7 +39,7 @@ Stack streetbanner(BuildContext context) {
           onPressed: () {
             Navigate.pop(context);
           },
-          icon: Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: AppColors.whiteIcon),
         ),
       ),
     ],

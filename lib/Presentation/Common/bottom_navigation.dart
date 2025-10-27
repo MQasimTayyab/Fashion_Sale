@@ -1,7 +1,7 @@
 import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
 import 'package:fashion_sale/Presentation/Common/bottomnav_controller.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
-import 'package:fashion_sale/Presentation/Widget/homepage/home_page.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/home_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

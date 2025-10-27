@@ -1,7 +1,7 @@
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
 
-import 'package:fashion_sale/Presentation/Widget/homepage/product_controller.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:fashion_sale/Presentation/Widget/street_cloth/components/first_section.dart';
 import 'package:fashion_sale/Presentation/Widget/street_cloth/components/second_section.dart';
 import 'package:fashion_sale/Presentation/Widget/street_cloth/components/street_banner.dart';

@@ -3,7 +3,7 @@ import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:fashion_sale/Presentation/Widget/homepage/product_controller.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:fashion_sale/Presentation/Common/common_card.dart';
 
 class AllProductsPage extends StatelessWidget {

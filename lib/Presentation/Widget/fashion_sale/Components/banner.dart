@@ -34,12 +34,6 @@ Stack banner(BuildContext context) {
               ),
             ),
             10.h.Y,
-            CommonButton(
-              text: AppStrings.check,
-              onPressed: () {
-                Navigate.to(context, StreetCloth());
-              },
-            ),
           ],
         ),
       ),

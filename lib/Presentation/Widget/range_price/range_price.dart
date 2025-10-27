@@ -141,7 +141,7 @@ class RangeSliderScreen extends StatelessWidget {
                   text: AppStrings.apply,
                   onPressed: () {
                     controller.applyFilter();
-                    Navigate.to(context, FilteredProductScreen());
+                    Navigate.to(context, const FilteredProductScreen());
                   },
                 ),
               ),

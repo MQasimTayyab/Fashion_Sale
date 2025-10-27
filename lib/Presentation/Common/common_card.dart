@@ -2,7 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
-import 'package:fashion_sale/Presentation/Widget/homepage/all_product.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/all_product.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,7 +1,7 @@
-import 'package:fashion_sale/Presentation/Widget/homepage/Components/banner.dart';
-import 'package:fashion_sale/Presentation/Widget/homepage/Components/new_product.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/Components/banner.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/Components/new_product.dart';
 
-import 'package:fashion_sale/Presentation/Widget/homepage/product_controller.dart';
+import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
