@@ -3,7 +3,7 @@ import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
+
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

@@ -1,6 +1,5 @@
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
-
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:fashion_sale/Presentation/Widget/street_cloth/components/first_section.dart';
 import 'package:fashion_sale/Presentation/Widget/street_cloth/components/second_section.dart';
@@ -24,21 +23,20 @@ class _StreetClothState extends State<StreetCloth> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              //  Banner Section
-              streetbanner(context),
+            child: Column(
+          children: [
+            //  Banner Section
+            streetbanner(context),
 
-              // First Section (Sale)
-              firstsection(context).paddingSymmetric(horizontal: 20.w),
+            // First Section (Sale)
+            firstsection(context),
 
-              25.h.Y,
+            25.h.Y,
 
-              //  Second Section (Newest)
-              secondsection(context).paddingSymmetric(horizontal: 20.w),
-            ],
-          ),
-        ),
+            //  Second Section (Newest)
+            secondsection(context)
+          ],
+        ).paddingSymmetric(horizontal: 20.w)),
       ),
       bottomNavigationBar: CommonBottomNavBar(),
     );

@@ -20,15 +20,16 @@ class AllProductsPage extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         if (controller.error.isNotEmpty) {
-          return Center(child: Text("Error: ${controller.error.value}"));
+          return Center(
+              child: CommonText(text: "Error: ${controller.error.value}"));
         }
         if (controller.products.isEmpty) {
-          return const Center(child: Text("No products found"));
+          return const Center(child: CommonText(text: "No products found"));
         }
 
         return GridView.builder(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, childAspectRatio: 0.90),
           itemCount: controller.products.length,
           itemBuilder: (context, index) {
             final product = controller.products[index];

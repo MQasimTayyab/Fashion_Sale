@@ -1,6 +1,7 @@
 import 'package:fashion_sale/Application/Services/Navigation_Services/navigation_services.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
+import 'package:fashion_sale/Data/extenstion.dart';
 
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
@@ -50,7 +51,7 @@ Row threewidgets(BuildContext context) {
                     child: CommonText(
                       text: AppStrings.streetcloth,
                       style: AppTextstyle.textone(context, fontsize: 20.sp),
-                    ),
+                    ).padOnly(top: 101.h),
                   )
                 ],
               ),
