@@ -1,7 +1,9 @@
-import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Data/app_strings.dart';
+
+import 'package:fashion_sale/Presentation/Common/common_text.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:fashion_sale/Presentation/Common/common_card.dart';
@@ -12,7 +14,7 @@ class AllProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("All Products")),
+      appBar: AppBar(title: CommonText(text: AppStrings.viewall)),
       body: Obx(() {
         if (controller.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
@@ -24,9 +26,10 @@ class AllProductsPage extends StatelessWidget {
           return const Center(child: Text("No products found"));
         }
 
-        return ListView.separated(
+        return GridView.builder(
+          gridDelegate:
+              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
           itemCount: controller.products.length,
-          separatorBuilder: (_, __) => 12.h.Y,
           itemBuilder: (context, index) {
             final product = controller.products[index];
             return ProductCard(

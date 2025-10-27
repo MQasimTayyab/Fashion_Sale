@@ -1,4 +1,4 @@
-import 'package:fashion_sale/Presentation/Widget/range_price/range_controller.dart';
+import 'package:fashion_sale/Presentation/Widget/filter_screen/range_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

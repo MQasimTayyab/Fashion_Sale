@@ -7,7 +7,7 @@ import 'package:fashion_sale/Data/utils.dart';
 import 'package:fashion_sale/Domain/Model/women_page.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-import 'package:fashion_sale/Presentation/Widget/women_tops_three/women_top_tree.dart';
+import 'package:fashion_sale/Presentation/Widget/filter_screen/filter_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -32,11 +32,7 @@ class _WomenPageState extends State<WomenPage> {
             onTap: () => Navigate.pop(context),
             child: Icon(Icons.arrow_back_ios),
           ),
-          title: InkWell(
-              onTap: () {
-                Navigate.to(context, WomenTopTree());
-              },
-              child: Center(child: CommonText(text: AppStrings.womenstops))),
+          title: Center(child: CommonText(text: AppStrings.womenstops)),
           actions: [Icon(Icons.search)],
         ),
         body: Column(
@@ -65,7 +61,11 @@ class _WomenPageState extends State<WomenPage> {
                 Row(children: [
                   Icon(Icons.filter_list),
                   10.X,
-                  CommonText(text: AppStrings.filters),
+                  InkWell(
+                      onTap: () {
+                        Navigate.to(context, RangeSliderScreen());
+                      },
+                      child: CommonText(text: AppStrings.filters)),
                 ]),
                 Row(children: [
                   Icon(Icons.double_arrow),

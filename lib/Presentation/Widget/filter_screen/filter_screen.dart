@@ -6,12 +6,12 @@ import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/common_btn.dart';
 import 'package:fashion_sale/Presentation/Common/common_circleavtar.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-import 'package:fashion_sale/Presentation/Widget/range_price/filter_product.dart';
-import 'package:fashion_sale/Presentation/Widget/range_price/range_controller.dart';
-
+import 'package:fashion_sale/Presentation/Widget/filter_screen/filter_product.dart';
+import 'package:fashion_sale/Presentation/Widget/filter_screen/range_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 //range slider
 
 class RangeSliderScreen extends StatelessWidget {
@@ -85,6 +85,7 @@ class RangeSliderScreen extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
+          //filter colors
           const Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -115,6 +116,7 @@ class RangeSliderScreen extends StatelessWidget {
             ],
           ),
           15.Y,
+          // sizes
           CommonText(
             text: AppStrings.sizes,
             style: AppTextstyle.texttwo(
@@ -124,6 +126,16 @@ class RangeSliderScreen extends StatelessWidget {
             ),
           ),
           15.Y,
+          //categories
+          CommonText(
+            text: AppStrings.categories,
+            style: AppTextstyle.texttwo(
+              context,
+              fontsize: 16.sp,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
