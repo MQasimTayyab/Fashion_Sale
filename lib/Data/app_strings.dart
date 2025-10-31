@@ -67,6 +67,7 @@ class AppStrings {
   static String girls = "Girls";
   static String discard = "Discard";
   static String apply = "Apply";
+  static String noproductfound = "No product found";
 
   // Product Details
   static String tshirtspanish = "T-Shirt SPANISH";

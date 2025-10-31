@@ -22,7 +22,7 @@ Column newproduct(BuildContext context) {
             text: AppStrings.neww,
             style: AppTextstyle.texttwo(context),
           ),
-          GestureDetector(
+          InkWell(
             onTap: () {
               Navigate.to(context, AllProductsPage());
             },
@@ -48,14 +48,14 @@ Column newproduct(BuildContext context) {
         }
         if (controller.error.isNotEmpty) {
           return Center(
-            child: Text(
-              "Error: ${controller.error.value}",
+            child: CommonText(
+              text: "Error: ${controller.error.value}",
               style: const TextStyle(color: Colors.red),
             ),
           );
         }
         if (controller.products.isEmpty) {
-          return const Center(child: Text("No products found"));
+          return Center(child: CommonText(text: AppStrings.noproductfound));
         }
 
         return SizedBox(

@@ -23,8 +23,8 @@ class CommonCircleAvatar extends StatelessWidget {
     return Obx(() {
       bool isSelected = rangeController.selectedColors.contains(fillColor);
 
-      //gesturedectector
-      return GestureDetector(
+      //inkwell
+      return InkWell(
         onTap: () => rangeController.toggleColor(fillColor),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 250),

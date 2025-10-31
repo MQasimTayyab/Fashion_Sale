@@ -24,7 +24,7 @@ class AllProductsPage extends StatelessWidget {
               child: CommonText(text: "Error: ${controller.error.value}"));
         }
         if (controller.products.isEmpty) {
-          return const Center(child: CommonText(text: "No products found"));
+          return Center(child: CommonText(text: AppStrings.noproductfound));
         }
 
         return GridView.builder(

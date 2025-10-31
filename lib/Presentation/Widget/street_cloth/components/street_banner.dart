@@ -2,6 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
+import 'package:fashion_sale/Presentation/Common/common_images.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 
 import 'package:flutter/material.dart';
@@ -11,13 +12,18 @@ Stack streetbanner(BuildContext context) {
   return Stack(
     children: [
       SizedBox(
-        width: double.infinity,
-        height: 0.35.sh,
-        child: Image.asset(
-          'assets/images/pexels-photo-911677 (1).png',
-          fit: BoxFit.cover,
-        ),
-      ),
+          width: double.infinity,
+          height: 0.35.sh,
+          child: AssetImages(
+            issvg: false,
+            imagepath: "assets/images/womens/pexels-photo-911677 (1).png",
+            fit: BoxFit.cover,
+          )
+          // Image.asset(
+          //   'assets/images/womens/pexels-photo-911677 (1).png',
+          //   fit: BoxFit.cover,
+          // ),
+          ),
       // Text
       Positioned(
         bottom: 16.h,

@@ -6,6 +6,7 @@ import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Data/utils.dart';
 import 'package:fashion_sale/Domain/Model/women_page.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
+import 'package:fashion_sale/Presentation/Common/common_images.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/filter_screen/filter_screen.dart';
 
@@ -33,7 +34,18 @@ class _WomenPageState extends State<WomenPage> {
             child: Icon(Icons.arrow_back_ios),
           ),
           title: Center(child: CommonText(text: AppStrings.womenstops)),
-          actions: [Icon(Icons.search)],
+          actions: [
+            Icon(Icons.search)
+            // Container(
+            //   color: Colors.grey,
+            //   child: AssetImages(
+            //     width: 30,
+            //     height: 30,
+            //     issvg: true,
+            //     imagepath: "assets/svg/Vector (1).svg",
+            //   ),
+            // ).padSymmetric(horizontal: 10)
+          ],
         ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,24 +130,31 @@ class _WomenPageState extends State<WomenPage> {
                           topLeft: Radius.circular(12),
                           topRight: Radius.circular(12),
                         ),
-                        child: Image.asset(
-                          product.imagePath,
-                          height: 265.h,
+                        child: AssetImages(
+                          issvg: false,
+                          imagepath: product.imagePath,
+                          height: 235.h,
                           width: double.infinity,
-                          fit: BoxFit.cover,
+                          fit: BoxFit.contain,
                         ),
+                        // Image.asset(
+                        //   product.imagePath,
+                        //   height: 265.h,
+                        //   width: double.infinity,
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
                       Container(
                         decoration: BoxDecoration(
-                          color: Colors.red,
+                          color: AppColors.filterRed,
                           borderRadius: BorderRadius.circular(6),
                         ),
-                        child: Text(
-                          product.discount,
-                          style:
-                              TextStyle(color: Colors.white, fontSize: 10.sp),
+                        child: CommonText(
+                          text: product.discount,
+                          style: AppTextstyle.textthree(context,
+                              color: AppColors.whiteText, fontsize: 10.sp),
                         ),
-                      ).padSymmetric(horizontal: 6, vertical: 6)
+                      ).padSymmetric(horizontal: 12, vertical: 12)
                     ],
                   ),
                 ],

@@ -2,6 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Common/common_images.dart';
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/all_product.dart';
 
 import 'package:flutter/material.dart';
@@ -30,7 +31,7 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: () {
         Navigate.to(context, AllProductsPage());
       },
@@ -50,14 +51,20 @@ class ProductCard extends StatelessWidget {
                     Stack(
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(
-                            imagePath,
-                            fit: BoxFit.contain,
-                            height: 150.h,
-                            width: double.infinity,
-                          ),
-                        ),
+                            borderRadius: BorderRadius.circular(12),
+                            child:
+                                // Image.asset(
+                                //   imagePath,
+                                //   fit: BoxFit.contain,
+                                //   height: 150.h,
+                                //   width: double.infinity,
+                                // ),
+                                AssetImages(
+                              issvg: false,
+                              imagepath: imagePath,
+                              height: 150.h,
+                              width: double.infinity,
+                            )),
                         Container(
                           height: 30.h,
                           width: 35.w,

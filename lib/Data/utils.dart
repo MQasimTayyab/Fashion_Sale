@@ -94,6 +94,16 @@ class Utils {
       "newPrice": "72",
       "color": AppColors.filterBlack, //  black
     },
+    {
+      "imagePath": "assets/images/womens/photo.png",
+      "discount": "New",
+      "subcategories": "Crop tops",
+      "brand": "Red valentino",
+      "productName": "Tops",
+      "oldPrice": "85",
+      "newPrice": "72",
+      "color": AppColors.blue, //  blue
+    },
   ];
 
   //Mens categories
@@ -117,9 +127,90 @@ class Utils {
       "productName": "Jacket",
       "oldPrice": "52",
       "newPrice": "39",
-      "color": AppColors.filterGrey, //  blue jeans jacket
+      "color": AppColors.blue, //  blue jeans jacket
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (1).png",
+      "discount": "New",
+      "subcategories": "Jackets",
+      "brand": "Blend",
+      "productName": "shirts",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.whiteIcon, // white
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (2).png",
+      "discount": "New",
+      "subcategories": "T-shirt",
+      "brand": "Blend",
+      "productName": "shirts",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.filterNavy, // navy
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (3).png",
+      "discount": "New",
+      "subcategories": "T-shirt",
+      "brand": "Blend",
+      "productName": "T-shirts",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.primaryRed, // red
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com.png",
+      "discount": "New",
+      "subcategories": "T-shirt",
+      "brand": "Blend",
+      "productName": "T-shirts",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.filterBlack, // black
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (5).png",
+      "discount": "New",
+      "subcategories": "Hoodies",
+      "brand": "Blend",
+      "productName": "hoodies",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.filterBlack, // black
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (6).png",
+      "discount": "New",
+      "subcategories": "Hoodies",
+      "brand": "Blend",
+      "productName": "hoodies",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.whiteIcon, // white
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (7).png",
+      "discount": "New",
+      "subcategories": "Hoodies",
+      "brand": "Blend",
+      "productName": "hoodies",
+      "oldPrice": "152",
+      "newPrice": "139",
+      "color": AppColors.yellow, // yellow
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (8).png",
+      "discount": "New",
+      "subcategories": "Hoodies",
+      "brand": "Blend",
+      "productName": "hoodies",
+      "oldPrice": "112",
+      "newPrice": "99",
+      "color": AppColors.blue, // blue
     },
   ];
+
   //kids categories
   static List<Map<String, dynamic>> kidscategories = [];
 
@@ -188,6 +279,16 @@ class Utils {
       "oldPrice": "12",
       "newPrice": "10",
       "color": AppColors.filterGrey, //  Grey
+    },
+    {
+      "imagePath": "assets/images/mens/pngwing.com (5).png",
+      "discount": "New",
+      "subcategories": "Hoodies",
+      "brand": "Blend",
+      "productName": "hoodies",
+      "oldPrice": "52",
+      "newPrice": "39",
+      "color": AppColors.filterBlack, // black
     },
   ];
 

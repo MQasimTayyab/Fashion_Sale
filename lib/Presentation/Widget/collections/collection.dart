@@ -3,7 +3,6 @@ import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-
 import 'package:fashion_sale/Presentation/Widget/collections/collection_controller.dart';
 import 'package:fashion_sale/Presentation/Widget/collections/components/new_collection.dart';
 import 'package:fashion_sale/Presentation/Widget/collections/components/three_widgets.dart';

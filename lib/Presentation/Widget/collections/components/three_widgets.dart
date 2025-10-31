@@ -2,6 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Presentation/Common/common_images.dart';
 
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
@@ -40,13 +41,18 @@ Row threewidgets(BuildContext context) {
               child: Stack(
                 children: [
                   SizedBox(
-                    height: 0.25.sh,
-                    width: double.infinity,
-                    child: Image.asset(
-                      "assets/images/image 2.png",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                      height: 0.25.sh,
+                      width: double.infinity,
+                      child: AssetImages(
+                        issvg: false,
+                        imagepath: "assets/images/womens/image 2.png",
+                        fit: BoxFit.cover,
+                      )
+                      //  Image.asset(
+                      // "assets/images/womens/image w2.png",
+                      //   fit: BoxFit.cover,
+                      // ),
+                      ),
                   Center(
                     child: CommonText(
                       text: AppStrings.streetcloth,
@@ -64,10 +70,15 @@ Row threewidgets(BuildContext context) {
         child: SizedBox(
           height: 0.46.sh,
           width: double.infinity,
-          child: Image.asset(
-            "assets/images/image.png",
+          child: AssetImages(
+            issvg: false,
+            imagepath: "assets/images/womens/image.png",
             fit: BoxFit.cover,
           ),
+          // Image.asset(
+          // "assets/images/womens/image.png",
+          //   fit: BoxFit.cover,
+          // ),
         ),
       ),
     ],
