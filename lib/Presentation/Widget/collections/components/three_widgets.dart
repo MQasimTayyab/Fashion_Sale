@@ -2,6 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Data/imagepath.dart';
 import 'package:fashion_sale/Presentation/Common/common_images.dart';
 
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
@@ -45,14 +46,9 @@ Row threewidgets(BuildContext context) {
                       width: double.infinity,
                       child: AssetImages(
                         issvg: false,
-                        imagepath: "assets/images/womens/image 2.png",
+                        imagepath: ImagePath.imagetwo,
                         fit: BoxFit.cover,
-                      )
-                      //  Image.asset(
-                      // "assets/images/womens/image w2.png",
-                      //   fit: BoxFit.cover,
-                      // ),
-                      ),
+                      )),
                   Center(
                     child: CommonText(
                       text: AppStrings.streetcloth,
@@ -72,13 +68,9 @@ Row threewidgets(BuildContext context) {
           width: double.infinity,
           child: AssetImages(
             issvg: false,
-            imagepath: "assets/images/womens/image.png",
+            imagepath: ImagePath.menshoodies,
             fit: BoxFit.cover,
           ),
-          // Image.asset(
-          // "assets/images/womens/image.png",
-          //   fit: BoxFit.cover,
-          // ),
         ),
       ),
     ],

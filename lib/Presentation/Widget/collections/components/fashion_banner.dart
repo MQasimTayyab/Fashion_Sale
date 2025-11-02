@@ -2,6 +2,7 @@ import 'package:fashion_sale/Application/Services/Navigation_Services/navigation
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Data/imagepath.dart';
 import 'package:fashion_sale/Presentation/Common/common_images.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 
@@ -17,14 +18,9 @@ Stack newcollection(BuildContext context) {
           height: 0.50.sh,
           child: AssetImages(
             issvg: false,
-            imagepath: "assets/images/womens/main.png",
+            imagepath: ImagePath.fashtionsale,
             fit: BoxFit.fill,
-          )
-          //  Image.asset(
-          // "assets/images/womens/main.png",
-          //   fit: BoxFit.fill,
-          // ),
-          ),
+          )),
       Center(
           child: TextButton(
         onPressed: () {

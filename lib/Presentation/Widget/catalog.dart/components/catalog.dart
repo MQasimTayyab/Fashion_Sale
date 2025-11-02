@@ -3,6 +3,7 @@ import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+import 'package:fashion_sale/Data/imagepath.dart';
 import 'package:fashion_sale/Data/utils.dart';
 import 'package:fashion_sale/Domain/Model/women_page.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
@@ -30,21 +31,25 @@ class _WomenPageState extends State<WomenPage> {
       child: Scaffold(
         appBar: AppBar(
           leading: InkWell(
-            onTap: () => Navigate.pop(context),
-            child: Icon(Icons.arrow_back_ios),
-          ),
+              onTap: () => Navigate.pop(context),
+              //back_arrow icon
+              child: AssetImages(
+                width: 10.w,
+                height: 10.h,
+                issvg: true,
+                imagepath: ImagePath.backsvg,
+                fit: BoxFit.contain,
+              ).padSymmetric(horizontal: 10)),
           title: Center(child: CommonText(text: AppStrings.womenstops)),
           actions: [
-            Icon(Icons.search)
-            // Container(
-            //   color: Colors.grey,
-            //   child: AssetImages(
-            //     width: 30,
-            //     height: 30,
-            //     issvg: true,
-            //     imagepath: "assets/svg/Vector (1).svg",
-            //   ),
-            // ).padSymmetric(horizontal: 10)
+            // search icon
+            AssetImages(
+              width: 30,
+              height: 30,
+              issvg: true,
+              imagepath: ImagePath.searchsvg,
+              fit: BoxFit.contain,
+            ).padSymmetric(horizontal: 10)
           ],
         ),
         body: Column(
@@ -71,7 +76,14 @@ class _WomenPageState extends State<WomenPage> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(children: [
-                  Icon(Icons.filter_list),
+                  //filter icon
+                  AssetImages(
+                    width: 30,
+                    height: 30,
+                    issvg: true,
+                    imagepath: ImagePath.filtersvg,
+                    fit: BoxFit.contain,
+                  ),
                   10.X,
                   InkWell(
                       onTap: () {
@@ -80,11 +92,26 @@ class _WomenPageState extends State<WomenPage> {
                       child: CommonText(text: AppStrings.filters)),
                 ]),
                 Row(children: [
-                  Icon(Icons.double_arrow),
+                  //price low and high icon
+
+                  AssetImages(
+                    width: 30,
+                    height: 30,
+                    issvg: true,
+                    imagepath: ImagePath.pricelowhighsvg,
+                    fit: BoxFit.contain,
+                  ),
                   10.X,
                   CommonText(text: AppStrings.pricehighesttolow),
                 ]),
-                Icon(Icons.add),
+                //list icon
+                AssetImages(
+                  width: 20,
+                  height: 20,
+                  issvg: true,
+                  imagepath: ImagePath.listsvg,
+                  fit: BoxFit.contain,
+                )
               ],
             ).padSymmetric(horizontal: 16, vertical: 8),
             Expanded(
@@ -137,12 +164,6 @@ class _WomenPageState extends State<WomenPage> {
                           width: double.infinity,
                           fit: BoxFit.contain,
                         ),
-                        // Image.asset(
-                        //   product.imagePath,
-                        //   height: 265.h,
-                        //   width: double.infinity,
-                        //   fit: BoxFit.cover,
-                        // ),
                       ),
                       Container(
                         decoration: BoxDecoration(

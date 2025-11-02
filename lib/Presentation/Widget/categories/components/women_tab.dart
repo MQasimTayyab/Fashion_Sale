@@ -6,7 +6,7 @@ import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Data/utils.dart';
 import 'package:fashion_sale/Presentation/Common/categories_card.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
-import 'package:fashion_sale/Presentation/Widget/women_page.dart/conponents/women_page.dart';
+import 'package:fashion_sale/Presentation/Widget/catalog.dart/components/catalog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
