@@ -7,6 +7,7 @@ import 'package:fashion_sale/Presentation/Common/common_images.dart';
 
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
+import 'package:fashion_sale/Presentation/Widget/categories/components/men_tab.dart';
 
 import 'package:fashion_sale/Presentation/Widget/street_cloth/street_cloth.dart';
 import 'package:flutter/material.dart';
@@ -63,13 +64,18 @@ Row threewidgets(BuildContext context) {
       ),
       Expanded(
         flex: 1,
-        child: SizedBox(
-          height: 0.46.sh,
-          width: double.infinity,
-          child: AssetImages(
-            issvg: false,
-            imagepath: ImagePath.menshoodies,
-            fit: BoxFit.cover,
+        child: InkWell(
+          onTap: () {
+            Navigate.to(context, mentab(context));
+          },
+          child: SizedBox(
+            height: 0.46.sh,
+            width: double.infinity,
+            child: AssetImages(
+              issvg: false,
+              imagepath: ImagePath.menshoodies,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ),

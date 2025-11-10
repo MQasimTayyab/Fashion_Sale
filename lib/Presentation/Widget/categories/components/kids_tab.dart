@@ -8,19 +8,20 @@ import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/catalog.dart/components/catalog.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-Column womentab(BuildContext context) {
-  final ProductController controller = Get.put(ProductController(), tag: "men");
+Column kidstab(BuildContext context) {
+  // ✅ Unique tags for GetX controllers to avoid conflicts
+  final ProductController controller =
+      Get.put(ProductController(), tag: "kids");
   final BannerController bannerController =
-      Get.put(BannerController(), tag: "menBanner");
+      Get.put(BannerController(), tag: "kidsBanner");
 
   return Column(
     children: [
-      //  Banner
+      /// 🟣 Banner Section
       Obx(() {
         final banner =
             bannerController.banners[bannerController.currentBannerIndex.value];
@@ -37,10 +38,11 @@ Column womentab(BuildContext context) {
               children: [
                 InkWell(
                   onTap: () {
+                    // Use banner title & Catalog screen
                     Navigate.to(
                         context,
                         Cataloge(
-                          categoryName: banner["title"] ?? "womens",
+                          categoryName: banner["title"] ?? "Kids",
                         ));
                   },
                   child: CommonText(
@@ -59,12 +61,14 @@ Column womentab(BuildContext context) {
           ),
         ).padOnly(top: 10.h);
       }),
+
       10.Y,
 
-      //  Categories
+      ///  horizontal Category List
       SizedBox(
         height: 120.h,
         child: ListView.builder(
+          scrollDirection: Axis.horizontal,
           itemCount: Utils.dummyCategories.length,
           itemBuilder: (context, index) {
             final category = Utils.dummyCategories[index];
@@ -75,14 +79,16 @@ Column womentab(BuildContext context) {
           },
         ),
       ),
+
       10.Y,
 
-      //
+      ///  horizontal Product List (Kids Products)
       Expanded(
         child: Obx(() {
           if (controller.isLoading.value) {
             return const Center(child: CircularProgressIndicator());
           }
+
           if (controller.error.isNotEmpty) {
             return Center(
               child: Text(
@@ -91,18 +97,21 @@ Column womentab(BuildContext context) {
               ),
             );
           }
-          if (Utils.menscategories.isEmpty) {
-            return const Center(child: Text("No products found"));
+
+          //
+          if (Utils.kidscategories.isEmpty) {
+            return Center(child: CommonText(text: "No products found"));
           }
 
           return SizedBox(
             height: 260.h,
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
-              itemCount: Utils.menscategories.length,
+              itemCount: Utils.kidscategories.length,
               separatorBuilder: (_, __) => 10.w.X,
               itemBuilder: (context, index) {
-                final product = Utils.menscategories[index];
+                final product = Utils.kidscategories[index];
+
                 return ProductCard(
                   imagePath: product["imagePath"] ?? "",
                   discount: product["discount"].toString(),
@@ -111,13 +120,14 @@ Column womentab(BuildContext context) {
                   oldPrice: product["oldPrice"].toString(),
                   newPrice: product["newPrice"].toString(),
                   onTap: () {
+                    // Example: open detail screen later
                     // Navigate.to(
-                    //     context,
-                    //     ProductDetailScreen(
-                    //       products: Utils.menscategories,
-                    //       selectedIndex: index,
-                    //     )
-                    //     );
+                    //   context,
+                    //   ProductDetailScreen(
+                    //     products: Utils.kidscategories,
+                    //     selectedIndex: index,
+                    //   ),
+                    // );
                   },
                 );
               },

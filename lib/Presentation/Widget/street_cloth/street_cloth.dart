@@ -33,7 +33,7 @@ class _StreetClothState extends State<StreetCloth> {
 
             25.h.Y,
 
-            //  Second Section (Newest)
+            //  Second Section
             secondsection(context)
           ],
         ).paddingSymmetric(horizontal: 20.w)),

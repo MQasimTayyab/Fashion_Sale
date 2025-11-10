@@ -3,11 +3,14 @@ import 'package:fashion_sale/Data/app_color.dart';
 import 'package:fashion_sale/Data/app_strings.dart';
 import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
+
 import 'package:fashion_sale/Presentation/Common/common_btn.dart';
 import 'package:fashion_sale/Presentation/Common/common_circleavtar.dart';
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
+import 'package:fashion_sale/Presentation/Widget/brand/brands.dart';
 import 'package:fashion_sale/Presentation/Widget/filter_screen/filter_product.dart';
 import 'package:fashion_sale/Presentation/Widget/filter_screen/range_controller.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -117,22 +120,53 @@ class RangeSliderScreen extends StatelessWidget {
           ),
           15.Y,
           // sizes
-          CommonText(
-            text: AppStrings.sizes,
-            style: AppTextstyle.texttwo(
-              context,
-              fontsize: 16.sp,
-              fontWeight: FontWeight.w500,
-            ),
-          ),
+          // InkWell(
+          //   onTap: () {
+          //     Navigate.to(
+          //       context,
+          //       ProductDetailScreen(
+          //         products: Utils.dummyWomenDiscountJson,
+          //         selectedIndex: 2,
+          //       ),
+          //     );
+          //   },
+          //   child: CommonText(
+          //     text: AppStrings.sizes,
+          //     style: AppTextstyle.texttwo(
+          //       context,
+          //       fontsize: 16.sp,
+          //       fontWeight: FontWeight.w500,
+          //     ),
+          //   ),
+          // ),
+
           15.Y,
           //categories
-          CommonText(
-            text: AppStrings.categories,
-            style: AppTextstyle.texttwo(
-              context,
-              fontsize: 16.sp,
-              fontWeight: FontWeight.w500,
+          // InkWell(
+          //   onTap: () {
+          //     Navigate.to(context, MyBagScreen());
+          //   },
+          //   child: CommonText(
+          //     text: AppStrings.categories,
+          //     style: AppTextstyle.texttwo(
+          //       context,
+          //       fontsize: 16.sp,
+          //       fontWeight: FontWeight.w500,
+          //     ),
+          //   ),
+          // ),
+          //brand
+          InkWell(
+            onTap: () {
+              Navigate.to(context, BrandFilterScreen());
+            },
+            child: CommonText(
+              text: AppStrings.brand,
+              style: AppTextstyle.texttwo(
+                context,
+                fontsize: 16.sp,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
 

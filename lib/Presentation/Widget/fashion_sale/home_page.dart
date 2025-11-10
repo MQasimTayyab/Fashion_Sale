@@ -3,10 +3,9 @@ import 'package:fashion_sale/Presentation/Widget/fashion_sale/Components/new_pro
 
 import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:get/get.dart';
 
-import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Presentation/Common/bottom_navigation.dart';
 
 class HomePage extends StatelessWidget {
@@ -28,7 +27,6 @@ class HomePage extends StatelessWidget {
               //new product
 
               newproduct(context)
-                  .padSymmetric(horizontal: 20.w, vertical: 20.h),
             ],
           ),
         ),

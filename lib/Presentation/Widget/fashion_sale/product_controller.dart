@@ -5,25 +5,23 @@ import 'package:fashion_sale/Domain/Model/product_model.dart';
 class ProductController extends GetxController {
   RxBool isLoading = true.obs;
   RxString error = "".obs;
-  RxList products = <ProductModel>[].obs;
+  RxList<ProductModel> products = <ProductModel>[].obs;
 
   @override
   void onInit() {
     super.onInit();
     loadProducts();
   }
-  //
 
   void loadProducts() async {
     try {
       isLoading(true);
-
       error("");
 
-      await Future.delayed(Duration(seconds: 2));
+      await Future.delayed(Duration(seconds: 1));
 
       products.value =
-          Utils.dummyproduct.map((e) => ProductModel.fromjson(e)).toList();
+          Utils.dummyproduct.map((e) => ProductModel.fromJson(e)).toList();
 
       if (products.isEmpty) {
         error("No products found");

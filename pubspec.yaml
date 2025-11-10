@@ -66,9 +66,9 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
-    # - assets/images/womens/
-    # - assets/images/mens/
-    # - assets/images/kids/
+    - assets/images/womens/
+    - assets/images/mens/
+    - assets/images/kids/
 
     
     # - assets/fonts/

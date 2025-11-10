@@ -76,6 +76,8 @@ class AppStrings {
   static String selectsize = "Select size";
   static String sizeinfo = "Size info";
   static String addtocart = "ADD TO CART";
+  static String descreption =
+      "Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.";
 
   // Promotional Content
   static String streetcloth = "Street clothes";

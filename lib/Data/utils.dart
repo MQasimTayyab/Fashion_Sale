@@ -212,7 +212,18 @@ class Utils {
   ];
 
   //kids categories
-  static List<Map<String, dynamic>> kidscategories = [];
+  static List<Map<String, dynamic>> kidscategories = [
+    {
+      "imagePath": "assets/images/kids/pngwing.com (10).png",
+      "discount": "New",
+      "subcategories": "T-shirts",
+      "brand": "Blend",
+      "productName": "shirt",
+      "oldPrice": "112",
+      "newPrice": "99",
+      "color": AppColors.blue, // blue
+    },
+  ];
 
   //  Dummy Categories
   static List<Map<String, dynamic>> dummyCategories = [
@@ -244,6 +255,7 @@ class Utils {
       "imagePath":
           "assets/images/womens/ff48013c2e83ffc52e71ad79aa63042d84df66ea (1).png",
       "discount": "New",
+      "category": "New",
       "brand": "Dorothy Perkins",
       "productName": "Evening Dress",
       "oldPrice": "15",
@@ -254,6 +266,7 @@ class Utils {
       "imagePath":
           "assets/images/mens/744caf4f8cbe22e0d501d66b730b03c24f793383.png",
       "discount": "New",
+      "category": "Clothes",
       "brand": "Sitlly",
       "productName": "Sport Dress",
       "oldPrice": "22",
@@ -264,6 +277,7 @@ class Utils {
       "imagePath":
           "assets/images/womens/ff48013c2e83ffc52e71ad79aa63042d84df66ea (1).png",
       "discount": "New",
+      "category": "New",
       "brand": "Dorothy Perkins",
       "productName": "Evening Dress",
       "oldPrice": "15",
@@ -275,6 +289,7 @@ class Utils {
           "assets/images/mens/744caf4f8cbe22e0d501d66b730b03c24f793383.png",
       "discount": "New",
       "brand": "Dorothy",
+      "category": "New",
       "productName": "Sport Dress",
       "oldPrice": "12",
       "newPrice": "10",
@@ -285,6 +300,7 @@ class Utils {
       "discount": "New",
       "subcategories": "Hoodies",
       "brand": "Blend",
+      "category": "New",
       "productName": "hoodies",
       "oldPrice": "52",
       "newPrice": "39",
@@ -332,7 +348,7 @@ class Utils {
   static List<Map<String, dynamic>> dummyWomenDiscountJson = [
     {
       "productName": "T-Shirt SPANISH",
-      "brand": "Mango",
+      "brand": "New",
       "rating": 3,
       "oldPrice": 21.0,
       "newPrice": 9.0,
@@ -352,17 +368,30 @@ class Utils {
     },
     {
       "productName": "Shirt",
-      "brand": "Mango",
+      "brand": "Accessories",
       "rating": 0,
       "oldPrice": 17.0,
       "newPrice": 14.0,
+      "category": "New",
       "discount": "-20%",
       "imagePath": "assets/images/womens/photofo.png",
       "color": AppColors.filterGrey, //  Grey
     },
     {
       "productName": "Light Blouse",
-      "brand": "Dorothy Perkins",
+      "brand": "Shoes",
+      "rating": 10,
+      "category": "New",
+      "oldPrice": 21.0,
+      "newPrice": 14.0,
+      "discount": "-20%",
+      "imagePath": "assets/images/womens/phototre.png",
+      "color": AppColors.filterBlack, // Black
+    },
+    {
+      "productName": "Light Blouse",
+      "brand": "Cloths",
+      "category": "New",
       "rating": 10,
       "oldPrice": 21.0,
       "newPrice": 14.0,
