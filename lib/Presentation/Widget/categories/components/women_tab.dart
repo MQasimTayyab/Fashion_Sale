@@ -3,18 +3,17 @@ import 'package:fashion_sale/Data/app_textstyle.dart';
 import 'package:fashion_sale/Data/extenstion.dart';
 import 'package:fashion_sale/Data/utils.dart';
 import 'package:fashion_sale/Presentation/Common/categories_card.dart';
-import 'package:fashion_sale/Presentation/Common/common_card.dart';
+
 import 'package:fashion_sale/Presentation/Common/common_text.dart';
 import 'package:fashion_sale/Presentation/Widget/catalog.dart/components/catalog.dart';
 import 'package:fashion_sale/Presentation/Widget/categories/categories.dart';
-import 'package:fashion_sale/Presentation/Widget/fashion_sale/product_controller.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 Column womentab(BuildContext context) {
-  final ProductController controller = Get.put(ProductController(), tag: "men");
+  // final ProductController controller = Get.put(ProductController(), tag: "men");
   final BannerController bannerController =
       Get.put(BannerController(), tag: "menBanner");
 
@@ -63,7 +62,7 @@ Column womentab(BuildContext context) {
 
       //  Categories
       SizedBox(
-        height: 120.h,
+        height: 520.h,
         child: ListView.builder(
           itemCount: Utils.dummyCategories.length,
           itemBuilder: (context, index) {
@@ -78,53 +77,53 @@ Column womentab(BuildContext context) {
       10.Y,
 
       //
-      Expanded(
-        child: Obx(() {
-          if (controller.isLoading.value) {
-            return const Center(child: CircularProgressIndicator());
-          }
-          if (controller.error.isNotEmpty) {
-            return Center(
-              child: Text(
-                "Error: ${controller.error.value}",
-                style: const TextStyle(color: Colors.red),
-              ),
-            );
-          }
-          if (Utils.menscategories.isEmpty) {
-            return const Center(child: Text("No products found"));
-          }
+      // Expanded(
+      //   child: Obx(() {
+      //     if (controller.isLoading.value) {
+      //       return const Center(child: CircularProgressIndicator());
+      //     }
+      //     if (controller.error.isNotEmpty) {
+      //       return Center(
+      //         child: Text(
+      //           "Error: ${controller.error.value}",
+      //           style: const TextStyle(color: Colors.red),
+      //         ),
+      //       );
+      //     }
+      //     if (Utils.menscategories.isEmpty) {
+      //       return const Center(child: Text("No products found"));
+      //     }
 
-          return SizedBox(
-            height: 260.h,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: Utils.menscategories.length,
-              separatorBuilder: (_, __) => 10.w.X,
-              itemBuilder: (context, index) {
-                final product = Utils.menscategories[index];
-                return ProductCard(
-                  imagePath: product["imagePath"] ?? "",
-                  discount: product["discount"].toString(),
-                  brand: product["brand"] ?? "",
-                  productName: product["productName"] ?? "",
-                  oldPrice: product["oldPrice"].toString(),
-                  newPrice: product["newPrice"].toString(),
-                  onTap: () {
-                    // Navigate.to(
-                    //     context,
-                    //     ProductDetailScreen(
-                    //       products: Utils.menscategories,
-                    //       selectedIndex: index,
-                    //     )
-                    //     );
-                  },
-                );
-              },
-            ),
-          );
-        }),
-      ),
+      //     return SizedBox(
+      //       height: 260.h,
+      //       child: ListView.separated(
+      //         scrollDirection: Axis.horizontal,
+      //         itemCount: Utils.menscategories.length,
+      //         separatorBuilder: (_, __) => 10.w.X,
+      //         itemBuilder: (context, index) {
+      //           final product = Utils.menscategories[index];
+      //           return ProductCard(
+      //             imagePath: product["imagePath"] ?? "",
+      //             discount: product["discount"].toString(),
+      //             brand: product["brand"] ?? "",
+      //             productName: product["productName"] ?? "",
+      //             oldPrice: product["oldPrice"].toString(),
+      //             newPrice: product["newPrice"].toString(),
+      //             onTap: () {
+      //               // Navigate.to(
+      //               //     context,
+      //               //     ProductDetailScreen(
+      //               //       products: Utils.menscategories,
+      //               //       selectedIndex: index,
+      //               //     )
+      //               //     );
+      //             },
+      //           );
+      //         },
+      //       ),
+      //     );
+      //   }),
+      // ),
     ],
   );
 }

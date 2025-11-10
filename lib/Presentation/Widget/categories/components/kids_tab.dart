@@ -13,7 +13,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 Column kidstab(BuildContext context) {
-  // ✅ Unique tags for GetX controllers to avoid conflicts
+  //
   final ProductController controller =
       Get.put(ProductController(), tag: "kids");
   final BannerController bannerController =
@@ -21,7 +21,7 @@ Column kidstab(BuildContext context) {
 
   return Column(
     children: [
-      /// 🟣 Banner Section
+      ///  Banner Section
       Obx(() {
         final banner =
             bannerController.banners[bannerController.currentBannerIndex.value];
@@ -66,9 +66,8 @@ Column kidstab(BuildContext context) {
 
       ///  horizontal Category List
       SizedBox(
-        height: 120.h,
+        height: 520.h,
         child: ListView.builder(
-          scrollDirection: Axis.horizontal,
           itemCount: Utils.dummyCategories.length,
           itemBuilder: (context, index) {
             final category = Utils.dummyCategories[index];
@@ -83,58 +82,58 @@ Column kidstab(BuildContext context) {
       10.Y,
 
       ///  horizontal Product List (Kids Products)
-      Expanded(
-        child: Obx(() {
-          if (controller.isLoading.value) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      // Expanded(
+      //   child: Obx(() {
+      //     if (controller.isLoading.value) {
+      //       return const Center(child: CircularProgressIndicator());
+      //     }
 
-          if (controller.error.isNotEmpty) {
-            return Center(
-              child: Text(
-                "Error: ${controller.error.value}",
-                style: const TextStyle(color: Colors.red),
-              ),
-            );
-          }
+      //     if (controller.error.isNotEmpty) {
+      //       return Center(
+      //         child: Text(
+      //           "Error: ${controller.error.value}",
+      //           style: const TextStyle(color: Colors.red),
+      //         ),
+      //       );
+      //     }
 
-          //
-          if (Utils.kidscategories.isEmpty) {
-            return Center(child: CommonText(text: "No products found"));
-          }
+      //     //
+      //     if (Utils.kidscategories.isEmpty) {
+      //       return Center(child: CommonText(text: "No products found"));
+      //     }
 
-          return SizedBox(
-            height: 260.h,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: Utils.kidscategories.length,
-              separatorBuilder: (_, __) => 10.w.X,
-              itemBuilder: (context, index) {
-                final product = Utils.kidscategories[index];
+      //     return SizedBox(
+      //       height: 260.h,
+      //       child: ListView.separated(
+      //         scrollDirection: Axis.horizontal,
+      //         itemCount: Utils.kidscategories.length,
+      //         separatorBuilder: (_, __) => 10.w.X,
+      //         itemBuilder: (context, index) {
+      //           final product = Utils.kidscategories[index];
 
-                return ProductCard(
-                  imagePath: product["imagePath"] ?? "",
-                  discount: product["discount"].toString(),
-                  brand: product["brand"] ?? "",
-                  productName: product["productName"] ?? "",
-                  oldPrice: product["oldPrice"].toString(),
-                  newPrice: product["newPrice"].toString(),
-                  onTap: () {
-                    // Example: open detail screen later
-                    // Navigate.to(
-                    //   context,
-                    //   ProductDetailScreen(
-                    //     products: Utils.kidscategories,
-                    //     selectedIndex: index,
-                    //   ),
-                    // );
-                  },
-                );
-              },
-            ),
-          );
-        }),
-      ),
+      //           return ProductCard(
+      //             imagePath: product["imagePath"] ?? "",
+      //             discount: product["discount"].toString(),
+      //             brand: product["brand"] ?? "",
+      //             productName: product["productName"] ?? "",
+      //             oldPrice: product["oldPrice"].toString(),
+      //             newPrice: product["newPrice"].toString(),
+      //             onTap: () {
+      //               // Example: open detail screen later
+      //               // Navigate.to(
+      //               //   context,
+      //               //   ProductDetailScreen(
+      //               //     products: Utils.kidscategories,
+      //               //     selectedIndex: index,
+      //               //   ),
+      //               // );
+      //             },
+      //           );
+      //         },
+      //       ),
+      //     );
+      //   }),
+      // ),
     ],
   );
 }
